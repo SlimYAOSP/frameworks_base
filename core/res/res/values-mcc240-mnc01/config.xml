@@ -24,4 +24,7 @@
     <!-- Do not set the system language as value of EF LI/EF PL -->
     <bool name="config_use_sim_language_file">false</bool>
 
+  <!-- Config IME switcher -->
+  <java-symbol type="bool" name="config_show_IMESwitcher" />
+
 </resources>
