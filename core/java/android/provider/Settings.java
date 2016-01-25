@@ -3664,6 +3664,12 @@ public final class Settings {
          */
         public static final String KEY_APP_SWITCH_ACTION = "key_app_switch_action";
 
+        /** 
+         * Whether to allow one finger quick settings expansion on the right side of the statusbar.
+         * @hide
+         */
+        public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
+
         /**
          * Action to perform when the app switch key is long-pressed. (default: ACTION_NULL)
          * (See ButtonsConstants.java for valid values)
