@@ -17,6 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Battery settings -->
     <array name="batterymeter_inverted_bolt_points" translatable="false">
         <item>743</item><item>73</item>
         <item>743</item><item>292</item>
@@ -52,6 +53,19 @@
     </string-array>
 
     <string-array name="status_bar_battery_percentage_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Notification drawer -->
+    <string-array name="quick_pulldown_entries" translatable="false">
+        <item>@string/quick_pulldown_off</item>
+        <item>@string/quick_pulldown_right</item>
+        <item>@string/quick_pulldown_left</item>
+    </string-array>
+
+    <string-array name="quick_pulldown_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>

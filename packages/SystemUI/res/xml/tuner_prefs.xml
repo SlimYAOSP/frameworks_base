@@ -17,54 +17,76 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/system_ui_tuner">
 
-    <Preference
-        android:key="qs_tuner"
-        android:title="@string/quick_settings" />
+    <PreferenceCategory
+        android:title="@string/qs_panel_title">
 
-    <PreferenceScreen
-        android:title="@string/status_bar" >
+        <Preference
+            android:key="qs_tuner"
+            android:title="@string/qs_tiles_title" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="cast"
-            android:title="@string/quick_settings_cast_title" />
+        <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/quick_pulldown_title"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="hotspot"
-            android:title="@string/quick_settings_hotspot_label" />
+       <SwitchPreference
+            android:key="qs_show_brightness_slider"
+            android:title="@string/qs_brightness_slider_title"
+            android:defaultValue="true"/>
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="bluetooth"
-            android:title="@string/quick_settings_bluetooth_label" />
+    </PreferenceCategory>
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="zen"
-            android:title="@string/quick_settings_dnd_label" />
+    <PreferenceCategory
+        android:title="@string/status_bar_category">
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="alarm_clock"
-            android:title="@string/status_bar_alarm" />
+        <PreferenceScreen
+            android:title="@string/status_bar_icons" >
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="managed_profile"
-            android:title="@string/status_bar_work" />
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="cast"
+                android:title="@string/quick_settings_cast_title" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="wifi"
-            android:title="@string/quick_settings_wifi_label" />
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="hotspot"
+                android:title="@string/quick_settings_hotspot_label" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="ethernet"
-            android:title="@string/status_bar_ethernet" />
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="bluetooth"
+                android:title="@string/quick_settings_bluetooth_label" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="mobile"
-            android:title="@string/quick_settings_cellular_detail_title" />
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="zen"
+                android:title="@string/quick_settings_dnd_label" />
 
-        <com.android.systemui.tuner.StatusBarSwitch
-            android:key="airplane"
-            android:title="@string/status_bar_airplane" />
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="alarm_clock"
+                android:title="@string/status_bar_alarm" />
 
-    </PreferenceScreen>
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="managed_profile"
+                android:title="@string/status_bar_work" />
+
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="wifi"
+                android:title="@string/quick_settings_wifi_label" />
+
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="ethernet"
+                android:title="@string/status_bar_ethernet" />
+
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="mobile"
+                android:title="@string/quick_settings_cellular_detail_title" />
+
+            <com.android.systemui.tuner.StatusBarSwitch
+                android:key="airplane"
+                android:title="@string/status_bar_airplane" />
+
+        </PreferenceScreen>
+
+    </PreferenceCategory>
 
     <!--SwitchPreference
         android:key="battery_pct"
