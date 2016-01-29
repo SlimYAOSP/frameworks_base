@@ -66,6 +66,7 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
     private static final String RECENTS_CLEAR_ALL_DISMISS_ALL = "recents_clear_all_dismiss_all";
     private static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
+    private static final String RECENT_SHOW_RUNNING_TASKS = "recent_show_running_tasks";
 
     public static final String SETTING_SEEN_TUNER_WARNING = "seen_tuner_warning";
 
@@ -87,6 +88,7 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAllDimissAll;
     private SwitchPreference mRecentsShowSearchBar;
+    private SwitchPreference mRecentsShowRunningTasks;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -176,6 +178,12 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
                 Settings.System.RECENTS_SHOW_SEARCH_BAR, 1, UserHandle.USER_CURRENT);
         mRecentsShowSearchBar.setChecked(recentsShowSearchBar == 1);
         mRecentsShowSearchBar.setOnPreferenceChangeListener(this);
+
+        mRecentsShowRunningTasks = (SwitchPreference) findPreference(RECENT_SHOW_RUNNING_TASKS);
+        int recentsShowRunningTasks = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENT_SHOW_RUNNING_TASKS, 0, UserHandle.USER_CURRENT);
+        mRecentsShowRunningTasks.setChecked(recentsShowRunningTasks == 1);
+        mRecentsShowRunningTasks.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -281,6 +289,10 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
         } else if (preference == mRecentsShowSearchBar) {
             Settings.System.putIntForUser(resolver, Settings.System.RECENTS_SHOW_SEARCH_BAR,
                     mRecentsShowSearchBar.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRecentsShowRunningTasks) {
+            Settings.System.putIntForUser(resolver, Settings.System.RECENT_SHOW_RUNNING_TASKS,
+                    mRecentsShowRunningTasks.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
             return true;
         }
         return false;

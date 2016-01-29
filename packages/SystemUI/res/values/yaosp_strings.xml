@@ -77,5 +77,7 @@
     <string name="recents_clear_all_dismiss_all_summary">Include foreground task when clearing all</string>
     <string name="recents_searchbar_title">Search bar</string>
     <string name="recents_searchbar_summary">Show Google search bar in the recents screen</string>
+    <string name="recents_only_running_title">Only running tasks</string>
+    <string name="recents_only_running_summary">Show only running tasks in the recents screen</string>
 
 </resources>
