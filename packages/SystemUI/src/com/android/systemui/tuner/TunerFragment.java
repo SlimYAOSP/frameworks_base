@@ -62,6 +62,11 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 
+    private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String RECENTS_CLEAR_ALL_DISMISS_ALL = "recents_clear_all_dismiss_all";
+    private static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
+
     public static final String SETTING_SEEN_TUNER_WARNING = "seen_tuner_warning";
 
 /*    private final SettingObserver mSettingObserver = new SettingObserver();
@@ -77,6 +82,11 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
 
     private int mbatteryStyle;
     private int mbatteryShowPercent;
+
+    private SwitchPreference mRecentsClearAll;
+    private ListPreference mRecentsClearAllLocation;
+    private SwitchPreference mRecentsClearAllDimissAll;
+    private SwitchPreference mRecentsShowSearchBar;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,6 +151,31 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
             Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER, 1, UserHandle.USER_CURRENT);
         mShowBrightnessSlider.setChecked(showBrightnessSlider == 1);
         mShowBrightnessSlider.setOnPreferenceChangeListener(this);
+
+        mRecentsClearAll = (SwitchPreference) findPreference(SHOW_CLEAR_ALL_RECENTS);
+        int recentsClearAllValue = Settings.System.getIntForUser(resolver,
+                Settings.System.SHOW_CLEAR_ALL_RECENTS, 0, UserHandle.USER_CURRENT);
+        mRecentsClearAll.setChecked(recentsClearAllValue == 1);
+        mRecentsClearAll.setOnPreferenceChangeListener(this);
+
+        mRecentsClearAllLocation = (ListPreference) findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        mRecentsClearAllDimissAll = (SwitchPreference) findPreference(RECENTS_CLEAR_ALL_DISMISS_ALL);
+        int recentsClearAllDimissAll = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_DISMISS_ALL, 1, UserHandle.USER_CURRENT);
+        mRecentsClearAllDimissAll.setChecked(recentsClearAllDimissAll == 1);
+        mRecentsClearAllDimissAll.setOnPreferenceChangeListener(this);
+
+        mRecentsShowSearchBar = (SwitchPreference) findPreference(RECENTS_SHOW_SEARCH_BAR);
+        int recentsShowSearchBar = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_SHOW_SEARCH_BAR, 1, UserHandle.USER_CURRENT);
+        mRecentsShowSearchBar.setChecked(recentsShowSearchBar == 1);
+        mRecentsShowSearchBar.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -227,6 +262,25 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
         } else if (preference == mShowBrightnessSlider) {
             Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                     mShowBrightnessSlider.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRecentsClearAll) {
+            Settings.System.putIntForUser(resolver, Settings.System.SHOW_CLEAR_ALL_RECENTS,
+                    mRecentsClearAll.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mRecentsClearAllDimissAll) {
+            Settings.System.putIntForUser(resolver, Settings.System.RECENTS_CLEAR_ALL_DISMISS_ALL,
+                    mRecentsClearAllDimissAll.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mRecentsShowSearchBar) {
+            Settings.System.putIntForUser(resolver, Settings.System.RECENTS_SHOW_SEARCH_BAR,
+                    mRecentsShowSearchBar.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
             return true;
         }
         return false;
