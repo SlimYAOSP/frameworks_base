@@ -61,4 +61,7 @@
     <string name="status_bar_category">Status bar options</string>
     <string name="status_bar_icons">Status bar icons</string>
 
+    <!-- Recents -->
+    <string name="clear_recents">Close all recent</string>
+
 </resources>
