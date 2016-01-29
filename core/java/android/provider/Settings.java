@@ -3503,6 +3503,12 @@ public final class Settings {
         public static final String RECENTS_SHOW_SEARCH_BAR = "recents_show_search_bar";
 
         /**
+         * Whether to only show actually running tasks
+         * @hide
+         */
+        public static final String RECENT_SHOW_RUNNING_TASKS = "recent_show_running_tasks";
+
+        /**
          * Whether the phone ringtone should be played in an increasing manner
          * @hide
          */
