@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Yank555.lu Android Open Source Project
+     Copyright (C) 2012-2014 SlimRoms Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
+
+    <!-- Battery level text while charging [CHAR LIMIT=2] -->
+    <string name="battery_level_template_charging"><xliff:g id="level" example="45">%d</xliff:g>~</string>
+
+    <!-- Settings - Battery Options -->
+    <string name="battery_icon_options_title">Batterie Symbol Optionen</string>
+
+    <!-- Settings - Battery Style -->
+    <string name="status_bar_battery_style_title">Batterie Status Style</string>
+    <string name="status_bar_battery_style_circle">Kreis</string>
+    <string name="status_bar_battery_style_dotted_circle">Gepunkteter Kreis</string>
+    <string name="status_bar_battery_style_text">Text</string>
+    <string name="status_bar_battery_style_hidden">Versteckt</string>
+    <string name="status_bar_battery_style_icon_portrait">Symbol Portrait</string>
+    <string name="status_bar_battery_style_icon_landscape">Symbol Landscape</string>
+
+    <!-- Settings - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Zeige Batterie Prozentanzeige</string>
+    <string name="status_bar_battery_percentage_dialog_title">Batterie Prozentanzeige</string>
+    <string name="status_bar_battery_percentage_default">Versteckt (Standard)</string>
+    <string name="status_bar_battery_percentage_text_inside">Im Batterie Icon</string>
+    <string name="status_bar_battery_percentage_text_next">Neben Batterie Icon</string>
+
+    <!-- Kill app toast -->
+    <string name="app_killed_message">App geschlossen</string>
+
+    <!-- Screenshot -->
+    <string name="shortcut_screenshot">Screenshot</string>
+
+    <!-- Notification drawer -->
+    <string name="qs_panel_title">Schnelleinstellung Optionen</string>
+    <string name="qs_tiles_title">Schnelleinstellungskacheln</string>
+    <string name="quick_pulldown_title">Schnelles runterziehen</string>
+    <string name="quick_pulldown_summary">%1$s am Rand der Statusbar runterziehen für die Schnelleinstellungen</string>
+    <string name="quick_pulldown_summary_left">Links</string>
+    <string name="quick_pulldown_summary_right">Rechts</string>
+    <string name="quick_pulldown_off">Aus</string>
+    <string name="quick_pulldown_left">Links</string>
+    <string name="quick_pulldown_right">Rechts</string>
+    <string name="qs_brightness_slider_title">Helligkeitsschieber</string>
+    <string name="status_bar_category">Statusbar Optionen</string>
+    <string name="status_bar_icons">Statusbar Symbole</string>
+
+    <!-- Recents -->
+    <string name="clear_recents">Anwendungsverlauf leeren</string>
+    <string name="recents_options_title">Anwendungsverlauf Optionen</string>
+    <string name="show_clear_all_recents_button_title">Alle Beenden Taste</string>
+    <string name="show_clear_all_recents_button_summary">Zeige Beenden Taste</string>
+    <string name="recents_clear_all_location_title">Alle Beenden Taste Position</string>
+    <string name="recents_clear_all_location_top_right">Oben Rechts</string>
+    <string name="recents_clear_all_location_top_left">Oben Links</string>
+    <string name="recents_clear_all_location_top_center">Oben Mitte</string>
+    <string name="recents_clear_all_location_bottom_right">Unten Rechts</string>
+    <string name="recents_clear_all_location_bottom_left">Unten Links</string>
+    <string name="recents_clear_all_location_bottom_center">Unten Mitte</string>
+    <string name="recents_clear_all_dismiss_all_title">Alles Beenden Option</string>
+    <string name="recents_clear_all_dismiss_all_summary">Alle Apps werden beendet, auch die im Vodergrund, wenn aktiv.</string>
+    <string name="recents_searchbar_title">Suchleiste</string>
+    <string name="recents_searchbar_summary">Zeige Google Suchleiste im Anwendungsverlauf</string>
+    <string name="recents_only_running_title">Nur Aktive apps</string>
+    <string name="recents_only_running_summary">Zeigt nur Aktive Apps im Anwendungsverlauf</string>
+
+</resources>
