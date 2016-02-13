@@ -71,6 +71,7 @@ public class CommandQueue extends IStatusBar.Stub {
     private static final int MSG_TOGGLE_LAST_APP                    = 27 << MSG_SHIFT;
     private static final int MSG_TOGGLE_KILL_APP                    = 28 << MSG_SHIFT;
     private static final int MSG_TOGGLE_SCREENSHOT                  = 29 << MSG_SHIFT;
+    private static final int MSG_SMART_PULLDOWN                     = 30 << MSG_SHIFT;
 
     public static final int FLAG_EXCLUDE_NONE = 0;
     public static final int FLAG_EXCLUDE_SEARCH_PANEL = 1 << 0;
@@ -122,6 +123,7 @@ public class CommandQueue extends IStatusBar.Stub {
         public void toggleLastApp();
         public void toggleKillApp();
         public void toggleScreenshot();
+        public void toggleSmartPulldown();
     }
 
     public CommandQueue(Callbacks callbacks, StatusBarIconList list) {
@@ -349,6 +351,13 @@ public class CommandQueue extends IStatusBar.Stub {
         }
     }
 
+    public void toggleSmartPulldown() {
+        synchronized (mList) {
+            mHandler.removeMessages(MSG_SMART_PULLDOWN);
+            mHandler.obtainMessage(MSG_SMART_PULLDOWN, 0, 0, null).sendToTarget();
+        }
+    }
+
     private final class H extends Handler {
         public void handleMessage(Message msg) {
             final int what = msg.what & MSG_MASK;
@@ -464,6 +473,9 @@ public class CommandQueue extends IStatusBar.Stub {
                     break;
                 case MSG_TOGGLE_SCREENSHOT:
                     mCallbacks.toggleScreenshot();
+                    break;
+                case MSG_SMART_PULLDOWN:
+                    mCallbacks.toggleSmartPulldown();
                     break;
             }
         }

@@ -80,4 +80,7 @@
     <string name="recents_only_running_title">Only running tasks</string>
     <string name="recents_only_running_summary">Show only running tasks in the recents screen</string>
 
+    <!-- Smart PullDown Warning -->
+    <string name="smart_pulldown_disabled">Smart pulldown is disabled</string>
+
 </resources>
