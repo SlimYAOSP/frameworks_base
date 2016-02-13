@@ -80,4 +80,15 @@
     <string name="recents_only_running_title">Uniquement applications en cours d\'exécution</string>
     <string name="recents_only_running_summary">N\'afficher que les applications en cours d\'exécutions dans l\'écran des applications récentes</string>
 
+     <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Déroulement intelligent</string>
+    <string name="smart_pulldown_summary">Ouvrir les paramètres rapides lorsqu\'il n\'y a pas de notification %1$s</string>
+    <string name="smart_pulldown_off">Désactivé</string>
+    <string name="smart_pulldown_dismissable">Amovible</string>
+    <string name="smart_pulldown_persistent">Persistante</string>
+    <string name="smart_pulldown_all">Amovible ou persistante</string>
+
+    <!-- Smart PullDown Warning -->
+    <string name="smart_pulldown_disabled">Le déroulement intelligent est désactivé</string>
+
 </resources>
