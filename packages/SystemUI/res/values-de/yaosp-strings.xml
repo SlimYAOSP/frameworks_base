@@ -47,7 +47,7 @@
     <!-- Notification drawer -->
     <string name="qs_panel_title">Schnelleinstellung Optionen</string>
     <string name="qs_tiles_title">Schnelleinstellungskacheln</string>
-    <string name="quick_pulldown_title">Schnelles runterziehen</string>
+    <string name="quick_pulldown_title">Schnelles Aufklappen</string>
     <string name="quick_pulldown_summary">%1$s am Rand der Statusbar runterziehen für die Schnelleinstellungen</string>
     <string name="quick_pulldown_summary_left">Links</string>
     <string name="quick_pulldown_summary_right">Rechts</string>
@@ -76,5 +76,16 @@
     <string name="recents_searchbar_summary">Zeige Google Suchleiste im Anwendungsverlauf</string>
     <string name="recents_only_running_title">Nur Aktive apps</string>
     <string name="recents_only_running_summary">Zeigt nur Aktive Apps im Anwendungsverlauf</string>
+
+     <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Intelligentes Aufklappen</string>
+    <string name="smart_pulldown_summary">Schnelleinstellungen öffnen, wenn %1$s Benachrichtigungen vorliegen</string>
+    <string name="smart_pulldown_off">Deaktiviert</string>
+    <string name="smart_pulldown_dismissable">keine quittierbaren</string>
+    <string name="smart_pulldown_persistent">keine dauerhaften</string>
+    <string name="smart_pulldown_all">keine quittierbaren oder dauerhaften</string>
+
+    <!-- Smart PullDown Warning -->
+    <string name="smart_pulldown_disabled">Intelligentes Aufklappen ist deaktiviert</string>
 
 </resources>
