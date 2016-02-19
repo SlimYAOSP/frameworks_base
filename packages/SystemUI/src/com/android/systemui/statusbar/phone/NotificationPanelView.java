@@ -98,9 +98,10 @@ public class NotificationPanelView extends PanelView implements
 
     public static final long DOZE_ANIMATION_DURATION = 700;
 
-    private static final int ONE_FINGER_QS_INTERCEPT_OFF   = 0;
-    private static final int ONE_FINGER_QS_INTERCEPT_RIGHT = 1;
-    private static final int ONE_FINGER_QS_INTERCEPT_LEFT  = 2;
+    private static final int ONE_FINGER_QS_INTERCEPT_OFF    = 0;
+    private static final int ONE_FINGER_QS_INTERCEPT_RIGHT  = 1;
+    private static final int ONE_FINGER_QS_INTERCEPT_LEFT   = 2;
+    private static final int ONE_FINGER_QS_INTERCEPT_ALWAYS = 3;
 
     private KeyguardAffordanceHelper mAfforanceHelper;
     private StatusBarHeaderView mHeader;
@@ -1557,6 +1558,8 @@ public class NotificationPanelView extends PanelView implements
             showQsOverride = isLayoutRtl() ? (x < region) : (w - region < x);
         } else if (mOneFingerQuickSettingsInterceptMode == ONE_FINGER_QS_INTERCEPT_LEFT) {
             showQsOverride = isLayoutRtl() ? (w - region < x) : (x < region);
+        } else if (mOneFingerQuickSettingsInterceptMode == ONE_FINGER_QS_INTERCEPT_ALWAYS) {
+            showQsOverride = true;
         }
 
         if ((mQsSmartPullDown == 1 && !mStatusBar.hasActiveClearableNotifications())
