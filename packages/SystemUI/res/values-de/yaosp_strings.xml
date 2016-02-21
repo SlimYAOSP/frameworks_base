@@ -90,4 +90,8 @@
     <!-- Smart PullDown Warning -->
     <string name="smart_pulldown_disabled">Intelligentes Aufklappen ist deaktiviert</string>
 
+    <!-- Statusbar brightness control -->
+    <string name="status_bar_toggle_brightness">Helligkeitsregelung</string>
+    <string name="status_bar_toggle_brightness_summary">Über die Statusleiste gleite um die Helligkeit einzustellen</string>
+
 </resources>
