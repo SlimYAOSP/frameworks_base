@@ -61,6 +61,8 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
+    private static final String QS_MAIN_TILES = "qs_main_tiles";
+    private static final String QS_NUM_TILE_COLUMNS = "qs_num_tile_columns";
     private static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
@@ -81,7 +83,9 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
 
     private ListPreference mQuickPulldown;
     private ListPreference mSmartPulldown;
+    private ListPreference mNumColumns;
 
+    private SwitchPreference mMainTiles;
     private SwitchPreference mShowBrightnessSlider;
     private SwitchPreference mStatusbarBrightnessControl;
 
@@ -158,6 +162,20 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
         mSmartPulldown.setValue(String.valueOf(smartPulldownValue));
         mSmartPulldown.setOnPreferenceChangeListener(this);
         updateSmartPulldownSummary(smartPulldownValue);
+
+        mMainTiles = (SwitchPreference) findPreference(QS_MAIN_TILES);
+        int mainTiles = Settings.Secure.getIntForUser(resolver,
+            Settings.Secure.QS_MAIN_TILES, 1, UserHandle.USER_CURRENT);
+        mMainTiles.setChecked(mainTiles == 1);
+        mMainTiles.setOnPreferenceChangeListener(this);
+
+        mNumColumns = (ListPreference) findPreference(QS_NUM_TILE_COLUMNS);
+        int numColumns = Settings.Secure.getIntForUser(resolver,
+                Settings.Secure.QS_NUM_TILE_COLUMNS, getDefaultNumColums(),
+                UserHandle.USER_CURRENT);
+        mNumColumns.setValue(String.valueOf(numColumns));
+        updateNumColumnsSummary(numColumns);
+        mNumColumns.setOnPreferenceChangeListener(this);
 
         mShowBrightnessSlider = (SwitchPreference) findPreference(QS_SHOW_BRIGHTNESS_SLIDER);
         int showBrightnessSlider = Settings.Secure.getIntForUser(resolver,
@@ -290,6 +308,16 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
                     smartPulldownValue, UserHandle.USER_CURRENT);
             updateSmartPulldownSummary(smartPulldownValue);
             return true;
+        } else if (preference == mMainTiles) {
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_MAIN_TILES,
+                    mMainTiles.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mNumColumns) {
+            int numColumns = Integer.valueOf((String) newValue);
+            Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_NUM_TILE_COLUMNS,
+                    numColumns, UserHandle.USER_CURRENT);
+            updateNumColumnsSummary(numColumns);
+            return true;
         } else if (preference == mShowBrightnessSlider) {
             Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_SHOW_BRIGHTNESS_SLIDER,
                     mShowBrightnessSlider.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
@@ -398,6 +426,25 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
             // Remove title capitalized formatting
             type = type.toLowerCase();
             mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type));
+        }
+    }
+
+    private void updateNumColumnsSummary(int numColumns) {
+        String prefix = (String) mNumColumns.getEntries()[mNumColumns.findIndexOfValue(String
+                .valueOf(numColumns))];
+        mNumColumns.setSummary(getActivity().getResources().getString(R.string.qs_num_columns_showing, prefix));
+    }
+
+    private int getDefaultNumColums() {
+        try {
+            Resources res = getActivity().getPackageManager()
+                    .getResourcesForApplication("com.android.systemui");
+            int val = res.getInteger(res.getIdentifier("quick_settings_num_columns", "integer",
+                    "com.android.systemui")); // better not be larger than 5, that's as high as the
+                                              // list goes atm
+            return Math.max(1, val);
+        } catch (Exception e) {
+            return 3;
         }
     }
 }
