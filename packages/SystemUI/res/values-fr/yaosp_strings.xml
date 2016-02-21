@@ -93,4 +93,8 @@
     <!-- Smart PullDown Warning -->
     <string name="smart_pulldown_disabled">Le déroulement intelligent est désactivé</string>
 
+    <!-- Statusbar brightness control -->
+    <string name="status_bar_toggle_brightness">Réglage de la luminosité</string>
+    <string name="status_bar_toggle_brightness_summary">Régler la luminosité en glissant le doigt sur la barre d\'état</string>
+
 </resources>
