@@ -97,4 +97,12 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across the status bar</string>
 
+    <!-- Additonal QS tiles -->
+    <!-- USB tether QS tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB tethering off</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB tethering on</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB tethering turned off</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB tethering turned on</string>
+    <string name="quick_settings_usb_tether_label">USB tethering</string>
+
 </resources>
