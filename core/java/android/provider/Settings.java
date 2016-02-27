@@ -3566,6 +3566,14 @@ public final class Settings {
         public static final String STATUSBAR_CLOCK_AM_PM_STYLE = "statusbar_clock_am_pm_style";
 
         /**
+         * show or hide seconds options
+         * 0 - hide seconds (default)
+         * 1 - show seconds
+         * @hide
+         */
+        public static final String STATUSBAR_CLOCK_SECONDS = "statusbar_clock_seconds";
+
+        /**
          * Style of clock
          * 0 - Right Clock
          * 1 - Center Clock

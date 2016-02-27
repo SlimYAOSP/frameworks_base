@@ -26,6 +26,7 @@ import android.content.res.TypedArray;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.Spannable;
@@ -59,12 +60,16 @@ public class Clock extends TextView implements DemoMode {
     protected SimpleDateFormat mClockFormat;
     protected Locale mLocale;
 
+    private static final int TIME_ONE_SECOND    = 999;
 
     public static final int AM_PM_STYLE_GONE    = 0;
     public static final int AM_PM_STYLE_SMALL   = 1;
     public static final int AM_PM_STYLE_NORMAL  = 2;
 
     private static int AM_PM_STYLE = AM_PM_STYLE_GONE;
+
+    public static final int CLOCK_SECONDS_GONE = 0;
+    public static final int CLOCK_SECONDS_VISIBLE = 1;
 
     public static final int CLOCK_DATE_DISPLAY_GONE = 0;
     public static final int CLOCK_DATE_DISPLAY_SMALL = 1;
@@ -81,6 +86,7 @@ public class Clock extends TextView implements DemoMode {
     public static final int STYLE_DATE_LEFT  = 0;
     public static final int STYLE_DATE_RIGHT = 1;
 
+    protected int mClockSeconds = CLOCK_SECONDS_GONE;
     protected int mClockDateDisplay = CLOCK_DATE_DISPLAY_GONE;
     protected int mClockDateStyle = CLOCK_DATE_STYLE_REGULAR;
     protected int mClockDatePosition = STYLE_DATE_LEFT;
@@ -106,6 +112,9 @@ public class Clock extends TextView implements DemoMode {
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE), false,
                     this, UserHandle.USER_ALL);
+            resolver.registerContentObserver(Settings.System
+                    .getUriFor(Settings.System.STATUSBAR_CLOCK_SECONDS),
+                    false, this, UserHandle.USER_ALL);
             resolver.registerContentObserver(Settings.System
                     .getUriFor(Settings.System.STATUSBAR_CLOCK_STYLE), false,
                     this, UserHandle.USER_ALL);
@@ -220,7 +229,9 @@ public class Clock extends TextView implements DemoMode {
                 updateSettings();
                 return;
             }
-            updateClock();
+            if(mClockSeconds == CLOCK_SECONDS_GONE) {
+                updateClock();
+            }
         }
     };
 
@@ -243,6 +254,9 @@ public class Clock extends TextView implements DemoMode {
 
         SimpleDateFormat sdf;
         String format = is24 ? d.timeFormat_Hm : d.timeFormat_hm;
+        if (mClockSeconds == CLOCK_SECONDS_VISIBLE) {
+            format = format.replaceFirst("mm","mm:ss");
+        }
         if (!format.equals(mClockFormatString)) {
             /*
              * Search for an unquoted "a" in the format string, so we can
@@ -367,6 +381,14 @@ public class Clock extends TextView implements DemoMode {
         mAmPmStyle = is24hour ? AM_PM_STYLE_GONE : amPmStyle;
         mClockFormatString = "";
 
+        mClockSeconds = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUSBAR_CLOCK_SECONDS, CLOCK_SECONDS_GONE,
+                UserHandle.USER_CURRENT);
+        if(mClockSeconds == CLOCK_SECONDS_VISIBLE) {
+                mSecondsHandler.postDelayed(mRunnable, TIME_ONE_SECOND);
+        } else {
+                clearHandlerCallbacks();
+        }
         mClockStyle = Settings.System.getIntForUser(resolver,
                 Settings.System.STATUSBAR_CLOCK_STYLE, STYLE_CLOCK_RIGHT,
                 UserHandle.USER_CURRENT);
@@ -438,4 +460,28 @@ public class Clock extends TextView implements DemoMode {
         }
     }
 
+    private Handler mSecondsHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            clearHandlerCallbacks();
+            if(mClockSeconds == CLOCK_SECONDS_VISIBLE) {
+                mSecondsHandler.postDelayed(mRunnable, TIME_ONE_SECOND);
+            }
+            updateClock();
+        }
+    };
+
+    private Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            if(mClockSeconds == CLOCK_SECONDS_VISIBLE) {
+                mSecondsHandler.sendEmptyMessage(0);
+            }
+        }
+    };
+
+    private void clearHandlerCallbacks() {
+        mSecondsHandler.removeCallbacks(mRunnable);
+        mSecondsHandler.removeMessages(0);
+    }
 }
