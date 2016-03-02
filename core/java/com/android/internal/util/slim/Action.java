@@ -23,6 +23,9 @@ import android.content.ActivityNotFoundException;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.hardware.camera2.CameraManager;
+import android.hardware.camera2.CameraCharacteristics;
+import android.hardware.camera2.CameraAccessException;
 import android.hardware.input.InputManager;
 import android.media.AudioManager;
 import android.media.session.MediaSessionLegacyHelper;
@@ -59,6 +62,8 @@ public class Action {
     private static int mExpandedDesktopState;
 
     private static Context mContext;
+
+    private static boolean sTorchEnabled = false;
 
     public static void processAction(Context context, String action, boolean isLongpress) {
         processActionWithOptions(context, action, isLongpress, true);
@@ -147,6 +152,22 @@ public class Action {
                 try {
                     barService.startAssist(new Bundle());
                 } catch (RemoteException e) {}
+            } else if (action.equals(ActionConstants.ACTION_TORCH)) {
+                try {
+                    CameraManager cameraManager = (CameraManager)
+                            context.getSystemService(Context.CAMERA_SERVICE);
+                    for (final String cameraId : cameraManager.getCameraIdList()) {
+                        CameraCharacteristics characteristics =
+                            cameraManager.getCameraCharacteristics(cameraId);
+                        int orient = characteristics.get(CameraCharacteristics.LENS_FACING);
+                        if (orient == CameraCharacteristics.LENS_FACING_BACK) {
+                            cameraManager.setTorchMode(cameraId, !sTorchEnabled);
+                            sTorchEnabled = !sTorchEnabled;
+                        }
+                    }
+                } catch (CameraAccessException e) {
+                }
+                return;
             } else if (action.equals(ActionConstants.ACTION_SMART_PULLDOWN)) {
                 if (isKeyguardShowing && isKeyguardSecure) {
                     return;
