@@ -94,4 +94,113 @@
     <string name="status_bar_toggle_brightness">Helligkeitsregelung</string>
     <string name="status_bar_toggle_brightness_summary">Über die Statusleiste gleite um die Helligkeit einzustellen</string>
 
+    <!-- Additonal QS tiles -->
+    <!-- USB tether QS tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">USB-Tethering ausgeschaltet</string>
+    <string name="accessibility_quick_settings_usb_tether_on">USB-Tethering eingeschaltet</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">USB-Tethering wurde ausgeschaltet</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">USB-Tethering wurde eingeschaltet</string>
+    <string name="quick_settings_usb_tether_label">USB-Tethering</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Ambient-Display ausgeschaltet</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Ambient-Display eingeschaltet</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Ambient-Display wurde ausgeschaltet</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Ambient-Display wurde eingeschaltet</string>
+    <string name="quick_settings_ambient_display_label">Ambient-Display</string>
+
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Bildschirmfoto</string>
+
+    <!-- NFC QS tile -->
+    <string name="quick_settings_nfc_label">NFC</string>
+
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sync</string>
+    <string name="accessibility_quick_settings_sync_off">Sync ausgeschaltet</string>
+    <string name="accessibility_quick_settings_sync_on">Sync eingeschaltet</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sync wurde ausgeschaltet</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sync wurde eingeschaltet</string>
+
+    <!-- Screen off QS tile -->
+    <string name="quick_settings_screen_off">Display aus</string>
+
+    <!-- Screen timeout QS tile -->
+    <string name="quick_settings_timeout_label">Bildschirm-Timeout</string>
+    <string name="quick_settings_screen_timeout_detail_title">Bildschirm-Timeout</string>
+    <string name="accessibility_quick_settings_screen_timeout">Bildschirm-Timeout: <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
+    <string name="accessibility_quick_settings_screen_timeout_changed">Bildschirm-Timeout eingestellt auf <xliff:g id="timeout" example="30 seconds">%s</xliff:g>.</string>
+
+    <!-- Brightness QS Tile -->
+    <string name="quick_settings_brightness">Helligkeit</string>
+
+    <!-- Music QS Tile -->
+    <string name="quick_settings_music_label">Musik</string>
+    <string name="quick_settings_music_play">Abspielen</string>
+    <string name="quick_settings_music_pause">Pause</string>
+
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Neustart</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+
+    <!-- Battery Saver QS Tile -->
+    <string name="quick_settings_battery_saver">Energiesparmodus</string>
+    <string name="accessibility_quick_settings_battery_saver_off">Energiesparmodus ausgeschaltet</string>
+    <string name="accessibility_quick_settings_battery_saver_on">Energiesparmodus eingeschaltet</string>
+    <string name="accessibility_quick_settings_battery_saver_changed_off">Energiesparmodus wurde ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_battery_saver_changed_on">Energiesparmodus wurde eingeschaltet.</string>
+
+    <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop">Erweitert</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Initialisiere\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Kompass ausgeschaltet</string>
+    <string name="accessibility_quick_settings_compass_on">Kompass eingeschaltet.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Kompass wurde ausgeschaltet.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Kompass wurde eingeschaltet.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NO</string>
+    <string name="quick_settings_compass_E">O</string>
+    <string name="quick_settings_compass_SE">SO</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SW</string>
+    <string name="quick_settings_compass_W">W</string>
+    <string name="quick_settings_compass_NW">NW</string>
+
+    <!-- IME selector Tile -->
+    <string name="quick_settings_ime_label">Eingabemethode</string>
+
+    <!-- Volume QS Tile -->
+    <string name="accessibility_quick_settings_volume_panel">Lautstärke-Panel.</string>
+    <string name="quick_settings_volume_panel_label">Lautstärke-Panel</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Ton</string>
+    <string name="quick_settings_sound_ring">Klingelton</string>
+    <string name="quick_settings_sound_vibrate">Vibrieren</string>
+    <string name="quick_settings_sound_silent">Lautlos</string>
+
+    <!-- Advanced Location QS Tile -->
+    <string name="accessibility_quick_settings_location_battery_saving">Standort-Modus: Akku Sparmodus.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Standort-Modus: Nur Geräte-Modus.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Standort-Modus: Hoher Genauigkeitsmodus.</string>
+
+    <string name="quick_settings_location_detail_title">Standort-Modus</string>
+    <string name="quick_settings_location_battery_saving_label">Akku sparen</string>
+    <string name="quick_settings_location_gps_only_label">Nur Gerät</string>
+    <string name="quick_settings_location_high_accuracy_label">Hohe Genauigkeit</string>
+
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_entries_three">Drei</string>
+    <string name="qs_num_columns_entries_four">Vier</string>
+    <string name="qs_num_columns_entries_five">Fünf</string>
+    <string name="qs_main_tiles_title">Erste Zeile vergrößern</string>
+    <string name="qs_main_tiles_summary">Zwei Kachel in der ersten Zeile</string>
+    <string name="qs_num_columns_title">Anzahl an Kachel pro Zeile</string>
+    <string name="qs_num_columns_showing">%1$s Kachel pro Zeile</string>
+
 </resources>
