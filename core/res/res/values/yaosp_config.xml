@@ -42,4 +42,7 @@
         <item>50</item>
     </integer-array>
 
+  <!-- BatteryLED fast charge -->
+  <integer name="config_chargingFastThreshold">1500000</integer>
+
 </resources>

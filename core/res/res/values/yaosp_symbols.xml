@@ -79,4 +79,7 @@
   <!-- Proximity check timeout on screen on -->
   <java-symbol type="integer" name="config_proximityCheckTimeout" />
 
+  <!-- BatteryLED fast charge -->
+  <java-symbol type="integer" name="config_chargingFastThreshold" />
+
 </resources>

@@ -181,7 +181,9 @@ public final class BatteryService extends SystemService {
                 com.android.internal.R.integer.config_shutdownBatteryTemperature);
 
         // Grab fastcharge threshold
-        mChargingFastThreshold = getConfigInteger(mContext, "config_chargingFastThreshold");
+//        mChargingFastThreshold = getConfigInteger(mContext, "config_chargingFastThreshold");
+        mChargingFastThreshold = mContext.getResources().getInteger(
+                com.android.internal.R.integer.config_chargingFastThreshold);
 
         // watch for invalid charger messages if the invalid_charger switch exists
         if (new File("/sys/devices/virtual/switch/invalid_charger/state").exists()) {
@@ -809,6 +811,25 @@ public final class BatteryService extends SystemService {
 
             final int level = mBatteryProps.batteryLevel;
             final int status = mBatteryProps.batteryStatus;
+
+            if (DEBUG) {
+                Slog.d(TAG, "Update batterylights: "
+                        + "mChargingFastThreshold" + mChargingFastThreshold
+                        + ", maxChargingCurrent" + mBatteryProps.maxChargingCurrent
+                        + ", chargerAcOnline=" + mBatteryProps.chargerAcOnline
+                        + ", chargerUsbOnline=" + mBatteryProps.chargerUsbOnline
+                        + ", chargerWirelessOnline=" + mBatteryProps.chargerWirelessOnline
+                        + ", batteryStatus=" + mBatteryProps.batteryStatus
+                        + ", batteryHealth=" + mBatteryProps.batteryHealth
+                        + ", batteryPresent=" + mBatteryProps.batteryPresent
+                        + ", batteryLevel=" + mBatteryProps.batteryLevel
+                        + ", batteryTechnology=" + mBatteryProps.batteryTechnology
+                        + ", batteryVoltage=" + mBatteryProps.batteryVoltage
+                        + ", batteryTemperature=" + mBatteryProps.batteryTemperature
+                        + ", mBatteryLevelCritical=" + mBatteryLevelCritical
+                        + ", mPlugType=" + mPlugType);
+            }
+
             if (!mLightEnabled) {
                 // No lights if explicitly disabled
                 mBatteryLight.turnOff();
@@ -978,6 +999,7 @@ public final class BatteryService extends SystemService {
         }
     }
 
+/*  This is not working on all devices --- don't use for now
     private static Integer getConfigInteger(Context context, String configIntegerName) {
         int resId = -1;
         Integer i = 0;
@@ -1007,4 +1029,5 @@ public final class BatteryService extends SystemService {
         }
         return i;
     }
+*/
 }
