@@ -6561,13 +6561,6 @@ public final class Settings {
         public static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
 
         /**
-         * Use "main" tiles on the first row of the quick settings panel
-         * 0 = no, 1 = yes
-         * @hide
-         */
-        public static final String QS_MAIN_TILES = "qs_main_tiles";
-
-        /**
          * Number of columns to display on the quick settings panel
          * Default is 3
          * @hide

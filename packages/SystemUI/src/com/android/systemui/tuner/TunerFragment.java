@@ -61,7 +61,6 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_SMART_PULLDOWN = "smart_pulldown";
-    private static final String QS_MAIN_TILES = "qs_main_tiles";
     private static final String QS_NUM_TILE_COLUMNS = "qs_num_tile_columns";
     private static final String QS_SHOW_BRIGHTNESS_SLIDER = "qs_show_brightness_slider";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
@@ -85,7 +84,6 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
     private ListPreference mSmartPulldown;
     private ListPreference mNumColumns;
 
-    private SwitchPreference mMainTiles;
     private SwitchPreference mShowBrightnessSlider;
     private SwitchPreference mStatusbarBrightnessControl;
 
@@ -162,12 +160,6 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
         mSmartPulldown.setValue(String.valueOf(smartPulldownValue));
         mSmartPulldown.setOnPreferenceChangeListener(this);
         updateSmartPulldownSummary(smartPulldownValue);
-
-        mMainTiles = (SwitchPreference) findPreference(QS_MAIN_TILES);
-        int mainTiles = Settings.Secure.getIntForUser(resolver,
-            Settings.Secure.QS_MAIN_TILES, 1, UserHandle.USER_CURRENT);
-        mMainTiles.setChecked(mainTiles == 1);
-        mMainTiles.setOnPreferenceChangeListener(this);
 
         mNumColumns = (ListPreference) findPreference(QS_NUM_TILE_COLUMNS);
         int numColumns = Settings.Secure.getIntForUser(resolver,
@@ -307,10 +299,6 @@ public class TunerFragment extends PreferenceFragment implements OnPreferenceCha
             Settings.System.putIntForUser(resolver, Settings.System.QS_SMART_PULLDOWN,
                     smartPulldownValue, UserHandle.USER_CURRENT);
             updateSmartPulldownSummary(smartPulldownValue);
-            return true;
-        } else if (preference == mMainTiles) {
-            Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_MAIN_TILES,
-                    mMainTiles.isChecked() ? 0 : 1, UserHandle.USER_CURRENT);
             return true;
         } else if (preference == mNumColumns) {
             int numColumns = Integer.valueOf((String) newValue);

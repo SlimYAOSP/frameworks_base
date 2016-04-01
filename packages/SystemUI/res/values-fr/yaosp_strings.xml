@@ -201,8 +201,6 @@
     <string name="qs_num_columns_entries_three">Trois</string>
     <string name="qs_num_columns_entries_four">Quatre</string>
     <string name="qs_num_columns_entries_five">Cinq</string>
-    <string name="qs_main_tiles_title">Agrandir la première ligne</string>
-    <string name="qs_main_tiles_summary">Deux grandes tuiles sur la première ligne</string>
     <string name="qs_num_columns_title">Nombre de tuiles par ligne</string>
     <string name="qs_num_columns_showing">%1$s tuiles par ligne</string>
 
