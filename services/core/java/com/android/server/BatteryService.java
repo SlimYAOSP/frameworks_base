@@ -815,21 +815,18 @@ public final class BatteryService extends SystemService {
                     // "Pulse low battery light" is disabled, no lights.
                     mBatteryLight.turnOff();
                 }
-            } else if (status == BatteryManager.BATTERY_STATUS_CHARGING
-                    || status == BatteryManager.BATTERY_STATUS_FULL) {
-                if (status == BatteryManager.BATTERY_STATUS_FULL || level >= 90) {
-                    // Battery is full or charging and nearly full
-                    mBatteryLight.setColor(mBatteryFullARGB);
-                } else {
+            } else if (status == BatteryManager.BATTERY_STATUS_CHARGING) {
                     if (isHvdcpPresent()) {
-                        // Battery is connected to HVDCP charger
+                        // Battery is charging on HVDCP charger
                         mBatteryLight.setFlashing(mBatteryMediumARGB, Light.LIGHT_FLASH_TIMED,
                                 mBatteryLedOn, mBatteryLedOn);
                     } else {
-                        // Battery is charging and halfway full
+                        // Battery is charging
                         mBatteryLight.setColor(mBatteryMediumARGB);
                     }
-                }
+            } else if (status == BatteryManager.BATTERY_STATUS_FULL) {
+                // Battery is full
+                mBatteryLight.setColor(mBatteryFullARGB);
             } else {
                 // No lights if not charging and not low
                 mBatteryLight.turnOff();
