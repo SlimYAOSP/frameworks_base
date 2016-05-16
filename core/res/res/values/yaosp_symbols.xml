@@ -23,6 +23,9 @@
    <!-- Doze invert -->
   <java-symbol type="bool" name="config_invert_colors_on_doze" />
 
+  <!-- Hardware key rebinding -->
+  <java-symbol type="integer" name="config_deviceHardwareKeys" />
+
   <!-- Shortcut actions -->
   <java-symbol type="drawable" name="ic_shortcut_action_silent" />
   <java-symbol type="drawable" name="ic_shortcut_action_theme_switch" />
