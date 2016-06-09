@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 Yank555.lu Android Open Source Project
+     Copyright (C) 2012-2014 SlimRoms Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Battery level for expanded quick settings [CHAR LIMIT=2] -->
+    <string name="battery_level_template"><xliff:g id="level" example="45">%d</xliff:g>%%</string>
+
+    <!-- Battery level text while charging [CHAR LIMIT=2] -->
+    <string name="battery_level_template_charging"><xliff:g id="level" example="45">%d</xliff:g>~</string>
+
+    <!-- Settings - Battery Options -->
+    <string name="battery_icon_options_title">Opciones del icono de batería</string>
+
+    <!-- Settings - Battery Style -->
+    <string name="status_bar_battery_style_title">Estilo del estado de la batería</string>
+    <string name="status_bar_battery_style_circle">Círculo</string>
+    <string name="status_bar_battery_style_dotted_circle">Círculo punteado</string>
+    <string name="status_bar_battery_style_text">Texto</string>
+    <string name="status_bar_battery_style_hidden">Oculto</string>
+    <string name="status_bar_battery_style_icon_portrait">Icono vertical</string>
+    <string name="status_bar_battery_style_icon_landscape">Icono horizontal</string>
+
+    <!-- Settings - Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Mostrar porcentaje</string>
+    <string name="status_bar_battery_percentage_dialog_title">Porcentaje de la batería</string>
+    <string name="status_bar_battery_percentage_default">Oculto (predeterminado)</string>
+    <string name="status_bar_battery_percentage_text_inside">Dentro del icono</string>
+    <string name="status_bar_battery_percentage_text_next">Al lado del icono</string>
+
+    <!-- Kill app toast -->
+    <string name="app_killed_message">Aplicación cerrada</string>
+
+    <!-- Screenshot -->
+    <string name="shortcut_screenshot">Captura de pantalla</string>
+
+    <!-- Notification drawer -->
+    <string name="qs_panel_title">Opciones de ajustes rápidos</string>
+    <string name="qs_tiles_title">Botones de ajustes rápidos</string>
+    <string name="quick_pulldown_title">Despliegue rápido</string>
+    <string name="quick_pulldown_summary">El lado %1$s de la barra de estado despliega los ajustes rápidos</string>
+    <string name="quick_pulldown_summary_left">Izquierdo</string>
+    <string name="quick_pulldown_summary_right">Derecho</string>
+    <string name="quick_pulldown_summary_always">Mostrar los ajustes rápidos simepre que se despliegue la barra de estado</string>
+    <string name="quick_pulldown_off">Deshabilitado</string>
+    <string name="quick_pulldown_left">Izquierda</string>
+    <string name="quick_pulldown_right">Derecha</string>
+    <string name="quick_pulldown_always">Siempre</string>
+    <string name="qs_brightness_slider_title">Deslizador de ajuste de brillo</string>
+    <string name="status_bar_category">Opciones de la barra de estado</string>
+    <string name="status_bar_icons">Iconos de la barra de estado</string>
+
+    <!-- Recents -->
+    <string name="clear_recents">Cerrar todas las aps. recientes</string>
+    <string name="recents_options_title">Opciones de aps. recientes</string>
+    <string name="show_clear_all_recents_button_title">Botón cerrar todas</string>
+    <string name="show_clear_all_recents_button_summary">Muestra el botón cerrar todas</string>
+    <string name="recents_clear_all_location_title">Ubicación del botón cerrar todas</string>
+    <string name="recents_clear_all_location_top_right">Arriba a la derecha</string>
+    <string name="recents_clear_all_location_top_left">Arriba a la izquierda</string>
+    <string name="recents_clear_all_location_top_center">Arriba en el centro</string>
+    <string name="recents_clear_all_location_bottom_right">Abajo a la derecha</string>
+    <string name="recents_clear_all_location_bottom_left">Abajo a la izquierda</string>
+    <string name="recents_clear_all_location_bottom_center">Abajo en el centro</string>
+    <string name="recents_clear_all_dismiss_all_title">Cerrar todos los procesos</string>
+    <string name="recents_clear_all_dismiss_all_summary">Incluir el proceso en primer plano al cerrar todos</string>
+    <string name="recents_searchbar_title">Barra de búsqueda</string>
+    <string name="recents_searchbar_summary">Muestra la barra de búsqueda de Google en la pantalla de aps. recientes</string>
+    <string name="recents_only_running_title">Solo aps. en ejecución</string>
+    <string name="recents_only_running_summary">Muestra solo las aplicaiones recientes en ejecución</string>
+
+     <!-- QuickSettings: Smart Pulldown -->
+    <string name="smart_pulldown_title">Despliegue inteligente</string>
+    <string name="smart_pulldown_summary">Abre los ajustes rápidos cuando hay notificaciones  %1$s presentes</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_dismissable">No desechables</string>
+    <string name="smart_pulldown_persistent">No persistentes</string>
+    <string name="smart_pulldown_all">No desechables o persistentes</string>
+
+    <!-- Smart PullDown Warning -->
+    <string name="smart_pulldown_disabled">Despliegue inteligente está deshabilitado</string>
+
+    <!-- Statusbar brightness control -->
+    <string name="status_bar_toggle_brightness">Control de brillo</string>
+    <string name="status_bar_toggle_brightness_summary">Ajusta el brillo deslizando el dedo a lo largo de la barra de estado</string>
+
+    <!-- Additonal QS tiles -->
+    <!-- USB tether QS tile -->
+    <string name="accessibility_quick_settings_usb_tether_off">Anclaje USB desactivado</string>
+    <string name="accessibility_quick_settings_usb_tether_on">Anclaje USB activado</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_off">Anclaje USB apagado</string>
+    <string name="accessibility_quick_settings_usb_tether_changed_on">Anclaje USB encendido</string>
+    <string name="quick_settings_usb_tether_label">Anclaje USB</string>
+
+    <!-- Ambient Display QS tile -->
+    <string name="accessibility_quick_settings_ambient_display_off">Pantalla ambiente desactivada</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Pantalla ambiente activada</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_off">Pantalla ambiente apagada</string>
+    <string name="accessibility_quick_settings_ambient_display_changed_on">Pantalla ambiente encendida</string>
+    <string name="quick_settings_ambient_display_label">Pantalla ambiente</string>
+
+    <!-- Screenshot QS tile -->
+    <string name="quick_settings_screenshot_label">Captura de pantalla</string>
+
+    <!-- NFC QS tile -->
+    <string name="quick_settings_nfc_label">NFC</string>
+
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Sinc.</string>
+    <string name="accessibility_quick_settings_sync_off">Sinc. apagada</string>
+    <string name="accessibility_quick_settings_sync_on">Sinc. encendida</string>
+    <string name="accessibility_quick_settings_sync_changed_off">Sinc. deshabilitada</string>
+    <string name="accessibility_quick_settings_sync_changed_on">Sinc. habilitada</string>
+
+    <!-- Screen off QS tile -->
+    <string name="quick_settings_screen_off">Apagar pantalla</string>
+
+    <!-- Screen timeout QS tile -->
+    <string name="quick_settings_timeout_label">Tiempo de espera</string>
+    <string name="quick_settings_screen_timeout_detail_title">Tiempo de espera de pantalla</string>
+    <string name="accessibility_quick_settings_screen_timeout">Tiempo de espera: <xliff:g id="timeout" ejemplo="30 segundos">%s</xliff:g>.</string>
+    <string name="accessibility_quick_settings_screen_timeout_changed">Tiempo de espera cambiado a <xliff:g id="timeout" ejemplo="30 segundos">%s</xliff:g>.</string>
+
+    <!-- Brightness QS Tile -->
+    <string name="quick_settings_brightness">Brillo</string>
+
+    <!-- Music QS Tile -->
+    <string name="quick_settings_music_label">Música</string>
+    <string name="quick_settings_music_play">Reproducir</string>
+    <string name="quick_settings_music_pause">Pausar</string>
+
+    <!-- Reboot/Recovery QS Tile -->
+    <string name="quick_settings_reboot_label">Reiniciar</string>
+    <string name="quick_settings_reboot_recovery_label">Recovery</string>
+
+    <!-- Battery Saver QS Tile -->
+    <string name="quick_settings_battery_saver">Ahorro de batería</string>
+    <string name="accessibility_quick_settings_battery_saver_off">Ahorro de batería deshabilitado.</string>
+    <string name="accessibility_quick_settings_battery_saver_on">Ahorro de batería habilitado.</string>
+    <string name="accessibility_quick_settings_battery_saver_changed_off">Ahorro de batería apagado.</string>
+    <string name="accessibility_quick_settings_battery_saver_changed_on">Ahorro de batería encendido.</string>
+
+    <!-- Expanded Desktop QS Tile -->
+    <string name="quick_settings_expanded_desktop">Expandido</string>
+    <string name="quick_settings_expanded_desktop_off">Normal</string>
+
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Compás</string>
+    <string name="quick_settings_compass_value"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Iniciando\u2026</string>
+    <string name="accessibility_quick_settings_compass_off">Compás deshabilitado.</string>
+    <string name="accessibility_quick_settings_compass_on">Compás habilitado.</string>
+    <string name="accessibility_quick_settings_compass_changed_off">Compás apagado.</string>
+    <string name="accessibility_quick_settings_compass_changed_on">Compás encendido.</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NE</string>
+    <string name="quick_settings_compass_E">E</string>
+    <string name="quick_settings_compass_SE">SE</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SO</string>
+    <string name="quick_settings_compass_W">O</string>
+    <string name="quick_settings_compass_NW">NO</string>
+
+    <!-- Caffeine QS Tile -->
+    <string name="quick_settings_caffeine_label">Cafeína</string>
+    <string name="accessibility_quick_settings_caffeine_off">Cafeína habilitado.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Cafeína deshabilitado.</string>
+
+    <!-- IME selector Tile -->
+    <string name="quick_settings_ime_label">IME</string>
+
+    <!-- Volume QS Tile -->
+    <string name="accessibility_quick_settings_volume_panel">Panel dde volumen.</string>
+    <string name="quick_settings_volume_panel_label">Panel de volumen</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Sonido</string>
+    <string name="quick_settings_sound_ring">Sonar</string>
+    <string name="quick_settings_sound_vibrate">Vibrar</string>
+    <string name="quick_settings_sound_silent">Silencio</string>
+
+    <!-- Advanced Location QS Tile -->
+    <string name="accessibility_quick_settings_location_battery_saving">Informe de ubicación: ahorro de batería.</string>
+    <string name="accessibility_quick_settings_location_gps_only">Informe de ubicación: sólo sensores.</string>
+    <string name="accessibility_quick_settings_location_high_accuracy">Informe de ubicación: alta precisión.</string>
+
+    <string name="quick_settings_location_detail_title">Modo de ubicación</string>
+    <string name="quick_settings_location_battery_saving_label">Ahorro de batería</string>
+    <string name="quick_settings_location_gps_only_label">Sólo dispositivo</string>
+    <string name="quick_settings_location_high_accuracy_label">Alta precisión</string>
+
+    <!-- QS Tiles Columns -->
+    <string name="qs_num_columns_entries_three">Tres</string>
+    <string name="qs_num_columns_entries_four">Cuatro</string>
+    <string name="qs_num_columns_entries_five">Cinco</string>
+    <string name="qs_num_columns_title">Número de botones por fila</string>
+    <string name="qs_num_columns_showing">Mostrando %1$s botones por fila</string>
+
+</resources>
