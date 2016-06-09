@@ -132,7 +132,7 @@
     <string name="quick_settings_timeout_label">Tiempo de espera</string>
     <string name="quick_settings_screen_timeout_detail_title">Tiempo de espera de pantalla</string>
     <string name="accessibility_quick_settings_screen_timeout">Tiempo de espera: <xliff:g id="timeout" ejemplo="30 segundos">%s</xliff:g>.</string>
-    <string name="accessibility_quick_settings_screen_timeout_changed">Tiempo de espera'cambiado a <xliff:g id="timeout" ejemplo="30 segundos">%s</xliff:g>.</string>
+    <string name="accessibility_quick_settings_screen_timeout_changed">Tiempo de espera cambiado a <xliff:g id="timeout" ejemplo="30 segundos">%s</xliff:g>.</string>
 
     <!-- Brightness QS Tile -->
     <string name="quick_settings_brightness">Brillo</string>
